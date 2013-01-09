@@ -21,7 +21,7 @@ Now, we have some files in `a` and `b`:
 2. `y` has two different version
 3. `z` is only in the `a`
 
-Before using the Tree Merger, we have to calculate the hash of the files. For an example, you can use the following command under each `a` and `b`:
+Before using the Tree Merger, we have to calculate the hashes of the files. For an example, you can use the following command under each `a` and `b`:
 
     find . -exec md5sum {} + > md5sum.list
 
