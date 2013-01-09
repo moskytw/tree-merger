@@ -1,10 +1,10 @@
 # Tree Merger
 
-I will backup my files in desktop, laptop and server, but I always forgot to sync them.
+I will backup files in my desktop, laptop and server, but I always forgot to sync them.
 
-It is a terrible thing to merge the different versions of my file tree which has more than ten thousands of files, so I wrote this helper.
+It is a terrible thing to merge the different versions of my file tree which has more than ten thousands of files, so I wrote this script.
 
-# Example
+## Example
 
 First, we simulate two different versions of the file tree.
 
@@ -17,11 +17,9 @@ First, we simulate two different versions of the file tree.
 
 Now, we have some files in `a` and `b`:
 
-    1. `x` is same in both `a` and `b`
-    2. `y` has two different version
-    3. `z` is only in the `a`
-
-I want to merge the files in `a` and `b`, and I want to keep the all of files.
+1. `x` is same in both `a` and `b`
+2. `y` has two different version
+3. `z` is only in the `a`
 
 Before using the Tree Merger, we have to calculate the hash of the files. For an example, you can use the following command under each `a` and `b`:
 
