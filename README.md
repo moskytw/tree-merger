@@ -2,11 +2,11 @@
 
 I will backup files in my desktop, laptop and server, but I always forgot to sync them.
 
-It is a terrible thing to merge the different versions of my file tree which has more than ten thousands of files, so I wrote this script.
+It is a terrible thing to merge the different versions of my file tree which has more than ten thousands of files, so I wrote this script for helping me to merge them.
 
 ## Example
 
-First, we simulate two different versions of the file tree.
+First, we simulate two different versions of the file tree:
 
     $ mkdir -p tmp/a tmp/b
     $ cd tmp/a
@@ -21,7 +21,7 @@ Now, we have some files in `a` and `b`:
 2. `y` has two different version
 3. `z` is only in the `a`
 
-Before using the Tree Merger, we have to calculate the hashes of the files. For an example, you can use the following command under each `a` and `b`:
+Before using the Tree Merger, we have to calculate the hashes of the files. For an example, you can use the following command under each `a` and `b` to get the hash list:
 
     $ find . -exec md5sum {} + > md5sum.list
 
@@ -56,10 +56,9 @@ You will get a merging script:
 
     cp --preserve=all a/z merged/z
 
-Edit the part of CONFLICT, and execute this script to get the merged file tree!
+Edit the part of CONFLICT, and execute this script to get the merged file tree.
 
-Have fun!
-
+Hope it would help you!
 
 
 

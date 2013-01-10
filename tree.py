@@ -37,7 +37,7 @@ class Tree(dict):
             self.add_hash(path_, hash_, source_prefix)
 
     def parse_hash_files(self, relpaths, drop_pattern=None):
-        # use the following command in different source directory
+        # use the following command in different source directories
         #
         #   $ find . -exec md5sum {} + > md5sum.list
         #
@@ -52,14 +52,14 @@ class Tree(dict):
                 self.parse_hash_lines(f, path.dirname(relpath), drop_pattern)
 
     def gen_merging_script(self, rebuild_prefix='merged'):
-        # gen the merging script
+        # generate a merging script
 
         made_dir_paths = set()
         # sort by number of possibles (desc)
-        # , so the conflict cases will at top of the script
+        # , so the conflict cases will at the top of this script
         for origin_path in sorted(self.keys(), key=lambda origin_path: len(self[origin_path]), reverse=True):
 
-            # where is the new location of this file
+            # the new location of this file
             rebuild_path = path.normpath(path.join(self.root, rebuild_prefix, origin_path))
 
             # ignore if this file exists
@@ -67,7 +67,7 @@ class Tree(dict):
                 print '# ingore %s, file exists' % rebuild_path
                 continue
 
-            # create the directory if didn't create
+            # create the directory if we didn't create
             dir_path = path.dirname(rebuild_path)
             if dir_path not in made_dir_paths:
                 print "mkdir -p %s" % quote(dir_path)
