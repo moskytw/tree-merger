@@ -2,9 +2,11 @@
 
 I will backup files in my desktop, laptop and server, but I always forgot to sync them.
 
-It is a terrible thing to merge the different versions of my file tree which has more than ten thousands of files, so I wrote this script for helping me to merge them.
+There are the different versions of a same file tree which has more than ten thousands of files. It is a terrible thing to merge them by the unaided eyes, so I wrote this script to help myself.
 
-## Example
+Tree Merger parses the hash lists you provied, and generates a merging script for you.
+
+## An Example
 
 First, we simulate two different versions of the file tree:
 
