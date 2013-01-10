@@ -26,6 +26,9 @@ class Tree(dict):
         if source_prefix:
             source_path = path.normpath(path.join(source_prefix, origin_path))
         else:
+            # NOTE: `source_prefix` is optional,
+            #       but you may encounter some problems if you don't give it
+            # TODO: find the possible problems are the above said, and fix them
             source_path = origin_path
 
         sources.append(source_path)
