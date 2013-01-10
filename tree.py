@@ -24,9 +24,11 @@ class Tree(dict):
         possibles = self.setdefault(origin_path, {})
         sources = possibles.setdefault(hash_, [])
         if source_prefix:
-            origin_path = path.normpath(path.join(source_prefix, origin_path))
-        sources.append(origin_path)
+            source_path = path.normpath(path.join(source_prefix, origin_path))
+        else:
+            source_path = origin_path
 
+        sources.append(source_path)
     def parse_hash_lines(self, lines, source_prefix=None, drop_pattern=None):
         # add lines with source prefix
         for line in lines:
