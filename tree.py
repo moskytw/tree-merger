@@ -19,22 +19,22 @@ class Tree(dict):
     def __init__(self, root=''):
         self.root = root
 
-    def add_hash(self, path_, hash_, source_prefix=None):
+    def add_hash(self, origin_path, hash_, source_prefix=None):
         # just add a hash record into tree
-        possibles = self.setdefault(path_, {})
+        possibles = self.setdefault(origin_path, {})
         sources = possibles.setdefault(hash_, [])
         if source_prefix:
-            path_ = path.normpath(path.join(source_prefix, path_))
-        sources.append(path_)
+            origin_path = path.normpath(path.join(source_prefix, origin_path))
+        sources.append(origin_path)
 
     def parse_hash_lines(self, lines, source_prefix=None, drop_pattern=None):
         # add lines with source prefix
         for line in lines:
-            hash_, __, path_ = line.strip().partition('  ')
+            hash_, __, origin_path = line.strip().partition('  ')
             # drop the matched path
-            if drop_pattern and drop_pattern.search(path_):
+            if drop_pattern and drop_pattern.search(origin_path):
                 continue
-            self.add_hash(path_, hash_, source_prefix)
+            self.add_hash(origin_path, hash_, source_prefix)
 
     def parse_hash_files(self, relpaths, drop_pattern=None):
         # use the following command in different source directories
