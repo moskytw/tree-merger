@@ -8,12 +8,12 @@ It is a terrible thing to merge the different versions of my file tree which has
 
 First, we simulate two different versions of the file tree.
 
-    mkdir -p tmp/a tmp/b
-    cd tmp/a
-    echo 1 > x; echo 2 > y; echo 3 > z
-    cp x y ../b
-    cd ..
-    echo changed > b/y
+    $ mkdir -p tmp/a tmp/b
+    $ cd tmp/a
+    $ echo 1 > x; echo 2 > y; echo 3 > z
+    $ cp x y ../b
+    $ cd ..
+    $ echo changed > b/y
 
 Now, we have some files in `a` and `b`:
 
@@ -23,7 +23,7 @@ Now, we have some files in `a` and `b`:
 
 Before using the Tree Merger, we have to calculate the hashes of the files. For an example, you can use the following command under each `a` and `b`:
 
-    find . -exec md5sum {} + > md5sum.list
+    $ find . -exec md5sum {} + > md5sum.list
 
 Then, enter the Python shell (under `tmp`):
 

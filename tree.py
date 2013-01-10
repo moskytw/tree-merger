@@ -39,7 +39,7 @@ class Tree(dict):
     def parse_hash_files(self, relpaths, drop_pattern=None):
         # use the following command in different source directory
         #
-        #   find . -exec md5sum {} + > md5sum.list
+        #   $ find . -exec md5sum {} + > md5sum.list
         #
         # and use this method to add the lists
         #
