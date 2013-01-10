@@ -23,6 +23,7 @@ class Tree(dict):
         # just add a hash record into tree
         possibles = self.setdefault(origin_path, {})
         sources = possibles.setdefault(hash_, [])
+
         if source_prefix:
             source_path = path.normpath(path.join(source_prefix, origin_path))
         else:
