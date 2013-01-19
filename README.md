@@ -1,6 +1,6 @@
 # Tree Merger
 
-I will backup files in my desktop, laptop and server, but I always forgot to sync them.
+I backuped files in my desktop, laptop and server, but I always forgot to sync them.
 
 There are the different versions of a same file tree which has more than ten thousands of files. It is a terrible thing to merge them by the unaided eyes, so I wrote this script to help myself.
 
