@@ -108,24 +108,24 @@ if __name__ == '__main__':
 
     # TEST CASE
 
-    #tree = Tree('/home/mosky/tmp/')
-    #tree.parse_hash_files(['a/md5sum.a', 'b/md5sum.b'])
-
-    #from pprint import pprint
-    #pprint(tree)
-
-    #tree.gen_merging_script('/home/mosky/merged')
-
-    # REAL CASE
-
-    tree = Tree('/media/mosky/Acer/Users/Mosky/Documents/')
-    tree.parse_hash_files([
-        '/media/mosky/Acer/Users/Mosky/Documents/md5sum.130110',
-        '/media/mosky/MOSKY-FLASH/md5sum.130110',
-        '/media/mosky/QUICK/md5sum.130110',
-    ])
+    tree = Tree('tmp/')
+    tree.parse_hash_files(['a/md5sum.list', 'b/md5sum.list'])
 
     #from pprint import pprint
     #pprint(tree)
 
     tree.gen_merging_script()
+
+    # REAL CASE
+
+    #tree = Tree('/media/mosky/Acer/Users/Mosky/Documents/')
+    #tree.parse_hash_files([
+    #    '/media/mosky/Acer/Users/Mosky/Documents/md5sum.130110',
+    #    '/media/mosky/MOSKY-FLASH/md5sum.130110',
+    #    '/media/mosky/QUICK/md5sum.130110',
+    #])
+
+    ##from pprint import pprint
+    ##pprint(tree)
+
+    #tree.gen_merging_script()
